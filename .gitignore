@@ -14,7 +14,6 @@ run/
 .project
 .settings
 bin/
-lib/
 src/generated/
 *.log
 *.jar
