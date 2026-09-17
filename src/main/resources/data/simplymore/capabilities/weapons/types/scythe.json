@@ -37,8 +37,8 @@
 	  "reimportrob:biped/namelesslk_falchion_auto2",
 	  "epicfight:biped/combat/spear_twohand_auto1",
       "cdmoveset:biped/new/dual_tachi/great_tachi_auto2",
-	  "efn:biped/scythe/combat/scythe_dash",
-      "efn:biped/scythe/combat/scythe_airslash"
+	  "epicfight:biped/combat/spear_twohand_auto2",
+      "epicfight:biped/combat/spear_twohand_auto3"
     ]
   },
   "category": "tachi",
