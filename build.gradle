@@ -59,10 +59,6 @@ repositories {
     mavenCentral()
 }
 
-configurations.all {
-    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-}
-
 dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
 }

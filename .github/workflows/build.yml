@@ -29,6 +29,18 @@ jobs:
           echo "GRADLE_HOME=$GITHUB_WORKSPACE/gradle/dist/gradle-8.5" >> $GITHUB_ENV
           echo "$GRADLE_HOME/bin" >> $GITHUB_PATH
       
+      - name: Install Epic Fight to local Maven
+        run: |
+          curl -L -o /tmp/epicfight.jar "https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod/files/8049910/download"
+          $GRADLE_HOME/bin/gradle init \
+            --dependency dev.epicfight:epicfight:20.14.17 \
+            --project-dir /tmp/epicfight-install \
+            --type basic
+          mkdir -p /root/.m2/repository/dev/epicfight/epicfight/20.14.17/
+          cp /tmp/epicfight.jar /root/.m2/repository/dev/epicfight/epicfight/20.14.17/epicfight-20.14.17.jar
+          echo '<dependency><groupId>dev.epicfight</groupId><artifactId>epicfight</artifactId><version>20.14.17</version></dependency>' > /tmp/epicfight-pom.xml
+          cp /tmp/epicfight-pom.xml /root/.m2/repository/dev/epicfight/epicfight/20.14.17/epicfight-20.14.17.pom
+      
       - name: Generate Data Pack
         run: bash generate_weapons.sh
       
