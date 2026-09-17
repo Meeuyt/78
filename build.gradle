@@ -81,9 +81,19 @@ configurations.all {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
 
-    implementation fg.deobf("curse.maven:epicfight-mod-405076:7345468")
-    implementation fg.deobf("curse.maven:simply-more-1095252:8860191")
+    // Epic Fight 1.20.1 Forge
+    implementation fg.deobf("curse.maven:epicfight-mod-405076:8049910")
+
+    // Simply Swords 1.20.1 Forge
+    implementation fg.deobf("curse.maven:simply-swords-938917:8746028")
+
+    // Simply More 1.20.1 Forge
+    implementation fg.deobf("curse.maven:simply-more-1095252:8736447")
+
+    // Cloth Config
     implementation fg.deobf("curse.maven:cloth-config-348521:3453721")
+
+    // Architectury
     implementation fg.deobf("curse.maven:architectury-419699:3744678")
 }
 
@@ -98,12 +108,6 @@ jar {
                 "Implementation-Vendor": "SimplyMoreEpicFight",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
-    }
-    from {
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-        configurations.runtimeClasspath.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
     }
     exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
 }
