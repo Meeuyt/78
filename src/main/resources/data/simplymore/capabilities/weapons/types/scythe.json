@@ -32,13 +32,13 @@
   },
   "combos": {
     "two_hand": [
-      "efn:biped/scythe/combat/scythe_auto1",
+      "epicfight:biped/combat/tachi_auto1",
 	  "cdmoveset:biped/new/spear/spear_twohand_auto1",
 	  "reimportrob:biped/namelesslk_falchion_auto2",
 	  "epicfight:biped/combat/spear_twohand_auto1",
       "cdmoveset:biped/new/dual_tachi/great_tachi_auto2",
-	  "epicfight:biped/combat/spear_twohand_auto2",
-      "epicfight:biped/combat/spear_twohand_auto3"
+	  "efn:biped/scythe/combat/scythe_dash",
+      "efn:biped/scythe/combat/scythe_airslash"
     ]
   },
   "category": "tachi",
