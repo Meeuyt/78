@@ -3,6 +3,8 @@
 
 BASE_DIR="/data/data/com.termux/files/home/simplymore-epicfight/src/main/resources/data/simplymore/capabilities/weapons"
 
+mkdir -p "$BASE_DIR"
+
 # Clear existing files
 rm -f "$BASE_DIR"/*.json
 
