@@ -1,7 +1,8 @@
 #!/bin/bash
 # Data Pack Generator for Simply More Epic Fight
 
-BASE_DIR="/data/data/com.termux/files/home/simplymore-epicfight/src/main/resources/data/simplymore/capabilities/weapons"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASE_DIR="$SCRIPT_DIR/src/main/resources/data/simplymore/capabilities/weapons"
 
 mkdir -p "$BASE_DIR"
 
@@ -49,7 +50,7 @@ JSONEOF
   done
 done
 
-echo "Base weapons generated: $(ls -1 $BASE_DIR | wc -l) files"
+echo "Base weapons generated: $(ls -1 $BASE_DIR 2>/dev/null | wc -l) files"
 
 # Unique weapons mapping
 declare -A UNIQUE_TYPES=(
@@ -113,7 +114,7 @@ for weapon in "${!UNIQUE_TYPES[@]}"; do
 JSONEOF
 done
 
-echo "Unique weapons generated: $(ls -1 $BASE_DIR | wc -l) total files"
+echo "Unique weapons generated: $(ls -1 $BASE_DIR 2>/dev/null | wc -l) total files"
 
 # Generate mimicry variants
 echo "Generating mimicry variants..."
@@ -136,5 +137,5 @@ for variant in longsword twinblade rapier katana spear glaive warglaive cutlass 
 JSONEOF
 done
 
-echo "Mimicry variants generated: $(ls -1 $BASE_DIR | wc -l) total files"
+echo "Mimicry variants generated: $(ls -1 $BASE_DIR 2>/dev/null | wc -l) total files"
 echo "Data pack generation complete!"

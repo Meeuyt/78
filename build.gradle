@@ -82,7 +82,6 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
 
     implementation fg.deobf("curse.maven:epicfight-mod-405076:7345468")
-    implementation fg.deobf("curse.maven:simply-swords-938917:5639538")
     implementation fg.deobf("curse.maven:simply-more-1095252:8860191")
     implementation fg.deobf("curse.maven:cloth-config-348521:3453721")
     implementation fg.deobf("curse.maven:architectury-419699:3744678")
