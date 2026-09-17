@@ -32,8 +32,29 @@ jobs:
       - name: Install Epic Fight to local Maven
         run: |
           mkdir -p /home/runner/.gradle/caches/forge_gradle/bundled_deobf_repo/curse/maven/epicfight-mod-405076/7345468_mapped_official_1.20.1/
-          curl -L -o /tmp/epicfight.jar "https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod/files/8049910/download"
-          cp /tmp/epicfight.jar /home/runner/.gradle/caches/forge_gradle/bundled_deobf_repo/curse/maven/epicfight-mod-405076/7345468_mapped_official_1.20.1/epicfight-mod-405076-7345468_mapped_official_1.20.1.jar
+          
+          echo "Attempting to download Epic Fight from CurseForge..."
+          
+          # Try multiple download methods
+          curl -fL --max-time 60 --retry 3 --retry-delay 5 \
+            -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+            -H "Accept: application/java-archive" \
+            -H "Referer: https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod" \
+            "https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod/files/7345468/download" \
+            -o /tmp/epicfight.jar || \
+          wget --timeout=60 --tries=3 --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
+            --referer="https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod" \
+            "https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod/files/7345468/download" \
+            -O /tmp/epicfight.jar
+          
+          # Verify it's a valid JAR
+          if [ -f /tmp/epicfight.jar ] && unzip -q /tmp/epicfight.jar -d /tmp/epicfight_check >/dev/null 2>&1; then
+            echo "Epic Fight JAR downloaded successfully"
+            cp /tmp/epicfight.jar /home/runner/.gradle/caches/forge_gradle/bundled_deobf_repo/curse/maven/epicfight-mod-405076/7345468_mapped_official_1.20.1/epicfight-mod-405076-7345468_mapped_official_1.20.1.jar
+          else
+            echo "WARNING: Failed to download Epic Fight, build may fail"
+          fi
+          
           cat > /home/runner/.gradle/caches/forge_gradle/bundled_deobf_repo/curse/maven/epicfight-mod-405076/7345468_mapped_official_1.20.1/epicfight-mod-405076-7345468_mapped_official_1.20.1.pom << 'EOF'
           <dependency>
             <groupId>curse.maven</groupId>
