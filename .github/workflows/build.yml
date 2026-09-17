@@ -31,10 +31,10 @@ jobs:
       
       - name: Install Epic Fight to local Maven
         run: |
-          mkdir -p /root/.m2/repository/curse/maven/epicfight-mod-405076/7345468_mapped_official_1.20.1/
+          mkdir -p /home/runner/.gradle/caches/forge_gradle/bundled_deobf_repo/curse/maven/epicfight-mod-405076/7345468_mapped_official_1.20.1/
           curl -L -o /tmp/epicfight.jar "https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod/files/8049910/download"
-          cp /tmp/epicfight.jar /root/.m2/repository/curse/maven/epicfight-mod-405076/7345468_mapped_official_1.20.1/epicfight-mod-405076-7345468_mapped_official_1.20.1.jar
-          cat > /root/.m2/repository/curse/maven/epicfight-mod-405076/7345468_mapped_official_1.20.1/epicfight-mod-405076-7345468_mapped_official_1.20.1.pom << 'EOF'
+          cp /tmp/epicfight.jar /home/runner/.gradle/caches/forge_gradle/bundled_deobf_repo/curse/maven/epicfight-mod-405076/7345468_mapped_official_1.20.1/epicfight-mod-405076-7345468_mapped_official_1.20.1.jar
+          cat > /home/runner/.gradle/caches/forge_gradle/bundled_deobf_repo/curse/maven/epicfight-mod-405076/7345468_mapped_official_1.20.1/epicfight-mod-405076-7345468_mapped_official_1.20.1.pom << 'EOF'
           <dependency>
             <groupId>curse.maven</groupId>
             <artifactId>epicfight-mod-405076</artifactId>
