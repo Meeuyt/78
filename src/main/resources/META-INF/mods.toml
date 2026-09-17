@@ -35,14 +35,14 @@ side="BOTH"
 
 [[dependencies.simplymoreepicfight]]
 modId="simplyswords"
-mandatory=true
+mandatory=false
 versionRange="[1.55.0,)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies.simplymoreepicfight]]
 modId="simplymore"
-mandatory=true
+mandatory=false
 versionRange="[1.2.0,)"
 ordering="AFTER"
 side="BOTH"
@@ -51,30 +51,34 @@ side="BOTH"
 [[dependencies.simplymoreepicfight]]
 modId="wom"
 mandatory=false
-versionRange="[2.0,)"
+versionRange="[0,)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies.simplymoreepicfight]]
 modId="cdmoveset"
 mandatory=false
+versionRange="[0,)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies.simplymoreepicfight]]
 modId="s_epicfied"
 mandatory=false
+versionRange="[0,)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies.simplymoreepicfight]]
 modId="efn"
 mandatory=false
+versionRange="[0,)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies.simplymoreepicfight]]
 modId="epicfight_edp"
 mandatory=false
+versionRange="[0,)"
 ordering="AFTER"
 side="BOTH"
