@@ -1,0 +1,48 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="simplymoreepicfight"
+version="1.0.0"
+displayName="Simply More Epic Fight"
+authors="SimplyMoreEpicFight Team"
+description='''
+Epic Fight integration for Simply More weapons.
+Adds unique combat styles, animations, and skills for all Simply More weapons.
+'''
+
+[[dependencies.simplymoreepicfight]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.simplymoreepicfight]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1, 1.21)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.simplymoreepicfight]]
+modId="epicfight"
+mandatory=true
+versionRange="[20.14.0,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.simplymoreepicfight]]
+modId="simplyswords"
+mandatory=true
+versionRange="[1.55.0,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.simplymoreepicfight]]
+modId="simplymore"
+mandatory=true
+versionRange="[1.2.0,)"
+ordering="AFTER"
+side="BOTH"

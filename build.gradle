@@ -1,0 +1,141 @@
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '6.0.+'
+}
+
+version = '1.0.0'
+group = 'com.simplymore.epicfight'
+
+java {
+    archivesBaseName = 'simplymore-epicfight'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                simplymoreepicfight {
+                    source sourceSets.main
+                }
+            }
+        }
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                simplymoreepicfight {
+                    source sourceSets.main
+                }
+            }
+        }
+        data {
+            workingDirectory project.file('run')
+            args '--mod', 'simplymoreepicfight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            mods {
+                simplymoreepicfight {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+sourceSets.main.resources.srcDir 'src/generated/resources'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    maven {
+        url "https://maven.theillusivec4.top/"
+    }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
+
+    // Epic Fight
+    implementation fg.deobf("curse.maven:epicfight-mod-405076:7345468")
+
+    // Simply Swords
+    implementation fg.deobf("curse.maven:simply-swords-938917:5639538")
+
+    // Simply More
+    implementation fg.deobf("curse.maven:simply-more-1095252:8860191")
+
+    // Cloth Config
+    implementation fg.deobf("curse.maven:cloth-config-348521:3453721")
+
+    // Architectury
+    implementation fg.deobf("curse.maven:architectury-419699:3744678")
+}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title": "simplymore-epicfight",
+                "Specification-Vendor": "SimplyMoreEpicFight",
+                "Specification-Version": "1.0.0",
+                "Implementation-Title": project.name,
+                "Implementation-Version": project.version,
+                "Implementation-Vendor": "SimplyMoreEpicFight",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+    from {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file://${project.projectDir}/maven"
+        }
+    }
+}
+
+tasks.withType(Javadoc).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+// Data pack generation task
+tasks.register('generateDataPack') {
+    group = 'simplymoreepicfight'
+    description = 'Generates weapon capability JSON files for the data pack'
+    doLast {
+        exec {
+            commandLine 'bash', 'generate_weapons.sh'
+        }
+    }
+}
+
+tasks.named('processResources') {
+    dependsOn 'generateDataPack'
+}
