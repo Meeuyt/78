@@ -78,26 +78,13 @@ configurations.all {
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
 
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-}
+dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
 
-    // Epic Fight
     implementation fg.deobf("curse.maven:epicfight-mod-405076:7345468")
-
-    // Simply Swords
     implementation fg.deobf("curse.maven:simply-swords-938917:5639538")
-
-    // Simply More
     implementation fg.deobf("curse.maven:simply-more-1095252:8860191")
-
-    // Cloth Config
     implementation fg.deobf("curse.maven:cloth-config-348521:3453721")
-
-    // Architectury
     implementation fg.deobf("curse.maven:architectury-419699:3744678")
 }
 
@@ -139,7 +126,6 @@ tasks.withType(Javadoc).configureEach {
     options.encoding = 'UTF-8'
 }
 
-// Data pack generation task
 tasks.register('generateDataPack') {
     group = 'simplymoreepicfight'
     description = 'Generates weapon capability JSON files for the data pack'
