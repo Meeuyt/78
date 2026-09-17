@@ -67,9 +67,27 @@ repositories {
         url "https://maven.theillusivec4.top/"
     }
     maven {
-        url "https://www.cursemaven.com"
+        url "https://maven.epicfight.dev/"
         content {
-            includeGroup "curse.maven"
+            includeGroup "dev.epicfight"
+        }
+    }
+    maven {
+        url "https://maven.simplyswords.dev/"
+        content {
+            includeGroup "com.simplyswords"
+        }
+    }
+    maven {
+        url "https://maven.architectury.dev/"
+        content {
+            includeGroup "dev.architectury"
+        }
+    }
+    maven {
+        url "https://maven.shedaniel.me/"
+        content {
+            includeGroup "me.shedaniel"
         }
     }
 }
@@ -81,20 +99,20 @@ configurations.all {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
 
-    // Epic Fight 1.20.1 Forge
-    implementation fg.deobf("curse.maven:epicfight-mod-405076:8049910")
+    // Epic Fight from official Maven
+    implementation fg.deobf("dev.epicfight:epicfight:20.14.17")
 
-    // Simply Swords 1.20.1 Forge
-    implementation fg.deobf("curse.maven:simply-swords-938917:8746028")
+    // Simply Swords
+    implementation fg.deobf("com.simplyswords:simplyswords:1.70.2")
 
-    // Simply More 1.20.1 Forge
+    // Simply More
     implementation fg.deobf("curse.maven:simply-more-1095252:8736447")
 
     // Cloth Config
-    implementation fg.deobf("curse.maven:cloth-config-348521:3453721")
+    implementation fg.deobf("me.shedaniel:cloth-config:11.1.106")
 
     // Architectury
-    implementation fg.deobf("curse.maven:architectury-419699:3744678")
+    implementation fg.deobf("dev.architectury:architectury:11.0.0")
 }
 
 jar {
