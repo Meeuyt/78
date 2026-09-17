@@ -43,7 +43,7 @@ side="BOTH"
 [[dependencies.simplymoreepicfight]]
 modId="simplymore"
 mandatory=false
-versionRange="[1.2.0,)"
+versionRange="[1.1.0,)"
 ordering="AFTER"
 side="BOTH"
 
