@@ -16,13 +16,13 @@
   "hit_sound": "epicfight:entity.hit.blade",
   "livingmotion_modifier": {
     "two_hand": {
-      "idle": "epicfight:biped/living/hold_tachi",
+      "idle": "efn:biped/scythe/living/scythe_idle_combat",
       "block": "reimportrob:biped/reascer_ruine_block",
-      "run": "wom:biped/living/agony_run",
+      "run": "efn:biped/scythe/living/scythe_run_combat",
       "sneak": "wom:biped/living/torment_berserk_idle",
       "swim": "epicfight:biped/living/hold_tachi",
       "kneel": "wom:biped/living/torment_berserk_idle",
-      "walk": "wom:biped/living/antitheus_walk"
+      "walk": "efn:biped/scythe/living/scythe_walk_combat"
     }
   },
   "swing_sound": "epicfight:entity.weapon.whoosh",
@@ -32,7 +32,7 @@
   },
   "combos": {
     "two_hand": [
-      "epicfight:biped/combat/tachi_auto1",
+      "efn:biped/scythe/combat/scythe_auto1",
 	  "cdmoveset:biped/new/spear/spear_twohand_auto1",
 	  "reimportrob:biped/namelesslk_falchion_auto2",
 	  "epicfight:biped/combat/spear_twohand_auto1",
