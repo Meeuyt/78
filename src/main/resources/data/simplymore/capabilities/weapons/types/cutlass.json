@@ -1,0 +1,48 @@
+{
+  "collider": {
+    "number": 3,
+    "size": [
+      0.4,
+      0.4,
+      0.7
+    ],
+    "center": [
+      0.0,
+      0.0,
+      -0.35
+    ]
+  },
+  "hit_particle": "epicfight:hit_blade",
+  "hit_sound": "epicfight:entity.hit.blade",
+  "livingmotion_modifier": {
+    "one_hand": {
+      "idle": "wom:biped/living/ruine_boosted_idle",
+      "run": "wom:biped/living/ruine_run",
+      "block": "epicfight:biped/skill/guard_sword",
+      "sneak": "wom:biped/living/ruine_boosted_idle",
+      "walk": "wom:biped/living/ruine_boosted_walk",
+      "swim": "epicfight:biped/living/hold_longsword",
+      "kneel": "wom:biped/living/ruine_boosted_idle"
+    }
+  },
+  "swing_sound": "epicfight:entity.weapon.whoosh_small",
+  "combos": {
+    "one_hand": [
+      "reimportrob:biped/asanginxst_dagger_auto1",
+      "reimportrob:biped/asanginxst_dagger_auto2",
+      "reimportrob:biped/asanginxst_dagger_dual_auto3",
+      "reimportrob:biped/asanginxst_old_sword_auto2",
+      "reimportrob:biped/asanginxst_eviscerate_first",
+      "reimportrob:biped/asanginxst_dagger_airslash"
+    ]
+  },
+  "styles": {
+    "default": "one_hand",
+    "cases": []
+  },
+  "category": "sword",
+  "innate_skills": {
+    "one_hand": "epicfight:eviscerate"
+  },
+  "usable_in_offhand": true
+}

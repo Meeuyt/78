@@ -1,0 +1,76 @@
+{
+  "collider": {
+    "number": 3,
+    "size": [
+      0.4,
+      0.4,
+      0.8
+    ],
+    "center": [
+      0.0,
+      0.0,
+      -0.75
+    ]
+  },
+  "hit_particle": "epicfight:hit_blade",
+  "hit_sound": "epicfight:entity.hit.blade",
+  "livingmotion_modifier": {
+    "sheath": {
+      "idle": "wom:biped/living/katana_sheathed_idle",
+      "run": "cdmoveset:biped/new/katana/hold_katana_sheath",
+      "block": "wom:biped/skill/katana_guard",
+      "sneak": "epicfight:biped/living/hold_uchigatana_sheath",
+      "walk": "wom:biped/living/katana_sheathed_idle",
+      "swim": "cdmoveset:biped/new/katana/hold_katana_sheath",
+      "kneel": "epicfight:biped/living/hold_uchigatana_sheath",
+      "sit": "cdmoveset:biped/new/katana/hold_katana_sheath"
+    },
+    "two_hand": {
+      "idle": "cdmoveset:biped/new/katana/hold_katana",
+      "run": "reimportrob:biped/asanginxst_run_katana",
+      "block": "cdmoveset:biped/hit/guard_longsword",
+      "sneak": "reimportrob:biped/reascer_old_sowrd_onehand_walk_forward",
+      "walk": "reimportrob:biped/reascer_old_sowrd_onehand_walk_forward",
+      "swim": "epicfight:biped/living/hold_tachi",
+      "kneel": "reimportrob:biped/reascer_old_sowrd_onehand_kneel"
+    }
+  },
+  "swing_sound": "epicfight:entity.weapon.whoosh",
+  "passive_skill": "epicfight:battojutsu_passive",
+  "combos": {
+    "sheath": [
+      "cdmoveset:biped/new/katana/skill/fatal_draw_dawn",
+      "epicfight:biped/combat/uchigatana_sheath_dash",
+      "cdmoveset:biped/new/katana/katana_sheath_airslash"
+    ],
+    "two_hand": [
+      "cdmoveset:biped/new/katana/katana_auto1",
+      "reimportrob:biped/asanginxst_old_sword_auto2",
+      "cdmoveset:biped/new/katana/katana_auto3",
+      "epicfight:biped/combat/uchigatana_auto2",
+      "reimportrob:biped/asanginxst_tachi_dash",
+      "reimportrob:biped/asanginxst_katana_airslash"
+    ]
+  },
+  "styles": {
+    "default": "two_hand",
+    "cases": [
+      {
+        "style": "sheath",
+        "conditions": [
+          {
+            "predicate": "epicfight:passive_skill_boolean_data_key",
+            "expected_value": 1,
+            "skill_data_key": "epicfight:sheath"
+          }
+        ]
+      }
+    ]
+  },
+  "category": "uchigatana",
+  "innate_skills": {
+    "two_hand": "epicfight:battojutsu",
+	"sheath": "epicfight:battojutsu"
+  },
+  "usable_in_offhand": false
+}

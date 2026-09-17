@@ -1,0 +1,48 @@
+{
+  "collider": {
+    "number": 3,
+    "size": [
+      0.2,
+      0.4,
+      1.0
+    ],
+    "center": [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  },
+  "hit_particle": "epicfight:hit_blade",
+  "hit_sound": "epicfight:entity.hit.blade",
+  "livingmotion_modifier": {
+    "two_hand": {
+      "idle": "reimportrob:biped/asanginxst_hold_spear",
+      "run": "reimportrob:biped/asanginxst_hold_spear",
+      "block": "reimportrob:biped/asanginxst_guard_spear",
+      "sneak": "reimportrob:biped/asanginxst_hold_spear",
+      "walk": "reimportrob:biped/asanginxst_hold_spear",
+      "kneel": "reimportrob:biped/asanginxst_hold_spear",
+      "swim": "reimportrob:biped/asanginxst_hold_spear"
+    }
+  },
+  "swing_sound": "epicfight:entity.weapon.whoosh_hard",
+  "styles": {
+    "default": "two_hand",
+    "cases": []
+  },
+  "combos": {
+    "two_hand": [
+      "epicfight:biped/combat/greatsword_auto1",
+      "wom:biped/combat/solar_auto_1",
+      "wom:biped/combat/ruine_auto_2",
+      "cdmoveset:biped/new/dual_greatsword/combat/greatsword_twohand_auto_3",
+      "wom:biped/combat/solar_quemadura",
+      "reimportrob:biped/asanginxst_greatsword_airslash"
+    ]
+  },
+  "category": "greatsword",
+  "innate_skills": {
+    "two_hand": "cdmoveset:wind_slash"
+  },
+  "usable_in_offhand": false
+}

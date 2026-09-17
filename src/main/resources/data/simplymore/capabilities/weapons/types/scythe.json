@@ -1,0 +1,49 @@
+{
+  "collider": {
+    "number": 3,
+    "size": [
+      0.4,
+      0.4,
+      0.8
+    ],
+    "center": [
+      0.0,
+      0.0,
+      -0.75
+    ]
+  },
+  "hit_particle": "epicfight:hit_blade",
+  "hit_sound": "epicfight:entity.hit.blade",
+  "livingmotion_modifier": {
+    "two_hand": {
+      "idle": "epicfight:biped/living/hold_tachi",
+      "block": "reimportrob:biped/reascer_ruine_block",
+      "run": "wom:biped/living/agony_run",
+      "sneak": "wom:biped/living/torment_berserk_idle",
+      "swim": "epicfight:biped/living/hold_tachi",
+      "kneel": "wom:biped/living/torment_berserk_idle",
+      "walk": "wom:biped/living/antitheus_walk"
+    }
+  },
+  "swing_sound": "epicfight:entity.weapon.whoosh",
+  "styles": {
+    "default": "two_hand",
+    "cases": []
+  },
+  "combos": {
+    "two_hand": [
+      "efn:biped/scythe/combat/scythe_auto1",
+	  "cdmoveset:biped/new/spear/spear_twohand_auto1",
+	  "reimportrob:biped/namelesslk_falchion_auto2",
+	  "epicfight:biped/combat/spear_twohand_auto1",
+      "cdmoveset:biped/new/dual_tachi/great_tachi_auto2",
+	  "efn:biped/scythe/combat/scythe_dash",
+      "efn:biped/scythe/combat/scythe_airslash"
+    ]
+  },
+  "category": "tachi",
+  "innate_skills": {
+    "two_hand":  "s_epicfied:scythe_slash"
+  },
+  "usable_in_offhand": false
+}

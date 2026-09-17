@@ -1,0 +1,110 @@
+{
+  "collider": {
+    "number": 3,
+    "size": [
+      0.4,
+      0.4,
+      0.8
+    ],
+    "center": [
+      0.0,
+      0.0,
+      -0.75
+    ]
+  },
+  "hit_particle": "epicfight:hit_blade",
+  "hit_sound": "epicfight:entity.hit.blade",
+  "livingmotion_modifier": {
+    "two_hand": {
+      "idle": "cdmoveset:biped/new/katana/hold_katana",
+      "run": "reimportrob:biped/asanginxst_run_holding_weapon",
+      "block": "epicfight:biped/skill/guard_longsword",
+      "sneak": "reimportrob:biped/asanginxst_sneak",
+      "walk": "epicfight:biped/living/walk_longsword",
+      "swim": "epicfight:biped/living/hold_longsword",
+      "kneel": "reimportrob:biped/reascer_old_sowrd_onehand_kneel"
+    },
+    "one_hand": {
+      "idle": "epicfight:biped/living/hold_longsword",
+      "run": "reimportrob:biped/asanginxst_run_holding_weapon",
+      "block": "wom:biped/skill/herrscher_guard",
+      "sneak": "reimportrob:biped/asanginxst_sneak",
+      "walk": "reimportrob:biped/reascer_old_sowrd_onehand_walk_forward",
+      "swim": "epicfight:biped/living/hold_longsword",
+      "kneel": "reimportrob:biped/reascer_old_sowrd_onehand_kneel"
+    },
+    "ochs": {
+      "idle": "reimportrob:biped/asanginxst_hold_longsword",
+      "block": "cdmoveset:biped/hit/guard_longsword",
+      "sneak": "reimportrob:biped/asanginxst_sneak",
+      "walk": "epicfight:biped/living/walk_liechtenauer",
+      "swim": "epicfight:biped/living/hold_spear",
+      "kneel": "reimportrob:biped/asanginxst_hold_longsword"
+    }
+  },
+  "offhand_item_compatible_predicate": [
+    {
+      "predicate": "epicfight:offhand_item_category",
+      "category": "shield"
+    }
+  ],
+  "swing_sound": "epicfight:entity.weapon.whoosh",
+  "combos": {
+    "two_hand": [
+      "reimportrob:biped/asanginxst_old_sword_auto1",
+      "epicfight:biped/combat/longsword_auto2",
+      "cdmoveset:biped/new/longsword/longsword_twohand_auto_3",
+      "cdmoveset:biped/new/longsword/tachi_twohand_auto_4",
+      "cdmoveset:biped/new/longsword/longsword_dash",
+      "epicfight:biped/combat/longsword_airslash"
+    ],
+    "one_hand": [
+      "reimportrob:biped/asanginxst_old_sword_auto1",
+      "epicfight:biped/combat/longsword_auto2",
+      "cdmoveset:biped/new/sword/sword_onehand_auto_3",
+      "reimportrob:biped/asanginxst_old_sword_auto2",
+      "reimportrob:biped/reascer_gezets_auto_1",
+      "epicfight:biped/combat/longsword_dash",
+      "cdmoveset:biped/new/yamato/yamato_airslash"
+    ],
+    "ochs": [
+      "cdmoveset:biped/new/longsword/longsword_twohand_auto_1",
+      "cdmoveset:biped/new/longsword/tachi_twohand_auto_2",
+      "cdmoveset:biped/new/longsword/longsword_twohand_auto_3",
+      "cdmoveset:biped/new/longsword/longsword_twohand_auto_4",
+      "epicfight:biped/combat/longsword_liechtenauer_auto3",
+      "reimportrob:biped/asanginxst_tachi_dash",
+      "reimportrob:biped/asanginxst_longsword_airslash"
+    ]
+  },
+  "styles": {
+    "default": "two_hand",
+    "cases": [
+      {
+        "style": "ochs",
+        "conditions": [
+          {
+            "predicate": "epicfight:skill_active",
+            "skill": "epicfight:liechtenauer"
+          }
+        ]
+      },
+      {
+        "style": "one_hand",
+        "conditions": [
+          {
+            "predicate": "epicfight:offhand_item_category",
+            "category": "shield"
+          }
+        ]
+      }
+    ]
+  },
+  "category": "longsword",
+  "innate_skills": {
+    "two_hand": "epicfight:liechtenauer",
+    "ochs": "epicfight:liechtenauer",
+    "one_hand": "epicfight:sharp_stab"
+  },
+  "usable_in_offhand": false
+}

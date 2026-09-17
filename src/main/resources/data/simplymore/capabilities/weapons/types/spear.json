@@ -1,0 +1,82 @@
+{
+  "collider": {
+    "number": 3,
+    "size": [
+      0.25,
+      0.3,
+      1.0
+    ],
+    "center": [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  },
+  "hit_particle": "epicfight:hit_blade",
+  "hit_sound": "epicfight:entity.hit.blade",
+  "livingmotion_modifier": {
+    "two_hand": {
+      "idle": "epicfight:biped/living/hold_spear",
+      "run": "epicfight:biped/living/run_spear",
+      "block": "reimportrob:biped/asanginxst_guard_spear",
+      "sneak": "epicfight:biped/living/hold_spear",
+      "walk": "epicfight:biped/living/walk_spear",
+      "kneel": "reimportrob:biped/asanginxst_kneel",
+      "swim": "epicfight:biped/living/hold_spear"
+    },
+    "one_hand": {
+      "idle": "epicfight:biped/living/hold_spear",
+      "run": "epicfight:biped/living/run_spear",
+      "block": "reimportrob:biped/asanginxst_shield_mirror",
+      "sneak": "epicfight:biped/living/hold_spear",
+      "walk": "epicfight:biped/living/hold_spear",
+      "swim": "epicfight:biped/living/hold_spear",
+      "kneel": "reimportrob:biped/reascer_old_sowrd_onehand_kneel"
+    }
+  },
+  "offhand_item_compatible_predicate": [
+    {
+      "predicate": "epicfight:offhand_item_category",
+      "category": "shield"
+    }
+  ],
+  "swing_sound": "epicfight:entity.weapon.whoosh",
+  "combos": {
+    "two_hand": [
+      "cdmoveset:biped/new/spear/spear_twohand_auto1",
+      "cdmoveset:biped/new/spear/spear_twohand_auto2",
+      "cdmoveset:biped/new/spear/spear_dash",
+      "epicfight:biped/combat/longsword_dash",
+      "epicfight:biped/combat/spear_dash",
+      "reimportrob:biped/asanginxst_spear_onehand_airslash"
+    ],
+    "one_hand": [
+      "cdmoveset:biped/new/spear/spear_onehand_auto",
+      "wom:biped/combat/agony_auto_1",
+      "reimportrob:biped/reascer_gezets_auto_1",
+      "cdmoveset:biped/new/spear/spear_dash",
+	  "efn:biped/nf_meen/nf_meen_dash",
+      "reimportrob:biped/asanginxst_spear_onehand_airslash"
+    ]
+  },
+  "styles": {
+    "default": "two_hand",
+    "cases": [
+      {
+        "style": "one_hand",
+        "conditions": [
+          {
+            "predicate": "epicfight:offhand_item_category",
+            "category": "shield"
+          }
+        ]
+      }
+    ]
+  },
+  "category": "spear",
+  "innate_skills": {
+    "two_hand": "s_epicfied:charged_spearslash",
+    "one_hand": "s_epicfied:charged_spearslash"
+  },
+  "usable_in_offhand": false
+}
