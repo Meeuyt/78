@@ -71,8 +71,6 @@ configurations.all {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
-
-    implementation fg.deobf("curse.maven:epicfight-mod-405076:7345468")
 }
 
 jar {
