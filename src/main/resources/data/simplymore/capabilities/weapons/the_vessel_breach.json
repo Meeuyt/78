@@ -2,11 +2,11 @@
   "type": "epicfight:dagger",
   "attributes": {
     "common": {
-      "armor_negation": 8.0,
-      "impact": 1.5,
+      "armor_negation": 5.0,
+      "impact": 1.0,
       "max_strikes": 1,
-      "damage_bonus": 3.0,
-      "speed_bonus": 0.0
+      "damage_bonus": 1.0,
+      "speed_bonus": 0.1
     }
   }
 }
