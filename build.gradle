@@ -72,7 +72,7 @@ configurations.all {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
 
-    compileOnly files('libs/epicfight.jar')
+    compileOnly 'curse.maven:epicfight-mod-405076:7345468'
 }
 
 jar {

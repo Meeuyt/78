@@ -30,7 +30,7 @@ jobs:
           echo "$GRADLE_HOME/bin" >> $GITHUB_PATH
       
       - name: Epic Fight API
-        run: echo "Using local libs/epicfight.jar (compileOnly)"
+        run: echo "Using CurseMaven epicfight-mod-405076:7345468 (compileOnly)"
       
       - name: Generate Data Pack
         run: bash generate_weapons.sh

@@ -1,139 +1,30 @@
-# Simply More Epic Fight
+# Simply More × Epic Fight
 
-Epic Fight integration for Simply More weapons. Adds unique combat styles, animations, and skills for all Simply More weapons.
+Epic Fight 战斗动画支持 for Simply More 武器（Minecraft 1.20.1 Forge）。
 
-## Requirements
+365 件 Simply More 武器全覆盖，13 个自定义武器类型（`simplymore:*`）的连招与待机动作套用 EpicFied 2。
 
-- **Java 17+** (Java 21 recommended)
-- **Gradle 8.5** (included via wrapper)
-- **Minecraft 1.20.1 Forge** MDK
+## 前置 Mod
 
-## Setup Instructions
+- Epic Fight 20.14+
+- Simply More 1.1+
+- Simply Swords 1.55+
+- 完整动作体验另需：Weapons of Miracles、Epic Fight Resurrection（cdmoveset）、SEpicfied Core、Epic Fight Nightfall、Epic Fight Extended Datapacks（均已声明为可选依赖，缺失时对应类型自动降级）
 
-### 1. Prerequisites
+## 构建
 
-Ensure you have Java 17 or newer installed:
 ```bash
-java -version
+bash generate_weapons.sh   # 生成 data pack（365 武器映射；types/ 为静态引用数据）
+gradle build               # 或推 main 分支走 GitHub Actions
 ```
 
-### 2. Build the Mod
+## 第三方来源与致谢（Credits）
 
-Using the Gradle wrapper:
-```bash
-./gradlew build
-```
+- **Epic Fight** by YesdogMan —— 战斗系统本体。本项目仅以 `compileOnly` 方式引用其 API（CurseMaven），不分发其二进制。
+- **Simply Swords EpicFied 2** by **RobertOn**（CC-BY-SA-4.0）—— `data/simplymore/capabilities/weapons/types/` 下 13 个武器类型定义直接改编自该项目（原命名空间 `simplyswords:*`），动画资源（`wom` / `reimportrob` / `efn` / `cdmoveset` / `epicfight`）归各自作者所有。
+- **Simply More** by RosemaryThyme —— 武器本体。
+- **Simply Swords** by Sweenus —— 武器本体。
 
-Or using system Gradle (8.5+):
-```bash
-gradle build
-```
+## 许可（License）
 
-### 3. Output
-
-The compiled JAR will be at:
-```
-build/libs/simplymore-epicfight-1.0.0.jar
-```
-
-### 4. Installation
-
-1. Install **Forge 1.20.1** for Minecraft
-2. Install **Epic Fight** (20.14.0+)
-3. Install **Simply Swords** (1.55.0+)
-4. Install **Simply More** (1.2.0+)
-5. Place `simplymore-epicfight-1.0.0.jar` in your `mods/` folder
-6. Launch Minecraft - the data pack will be automatically installed
-
-## Project Structure
-
-```
-simplymore-epicfight/
-├── build.gradle                 # ForgeGradle 6.x build script
-├── settings.gradle              # Gradle settings
-├── gradle.properties            # Version configuration
-├── gradlew / gradlew.bat        # Gradle wrapper scripts
-├── generate_weapons.sh          # Data pack generator
-├── README.md                    # This file
-│
-├── src/main/java/com/simplymore/epicfight/
-│   ├── SimplyMoreEpicFight.java           # Main mod class
-│   ├── config/
-│   │   └── SimplyMoreEpicFightConfig.java # Config
-│   ├── registry/
-│   │   ├── WeaponRegistry.java            # Weapon registration
-│   │   └── WeaponTypeMapper.java          # 133 weapon mappings
-│   ├── skill/
-│   │   ├── SkillRegistry.java             # Skill registration
-│   │   ├── HyperFocusSkill.java           # Katana blur effect
-│   │   ├── ImpactFrameSkill.java          # Special attack effect
-│   │   └── ColorShadingSkill.java         # Weapon color effect
-│   ├── event/
-│   │   ├── ServerEventHandler.java        # Server events
-│   │   └── ClientEventHandler.java        # Client events
-│   └── client/
-│       └── ClientSetup.java               # Client setup
-│
-└── src/main/resources/
-    ├── META-INF/mods.toml                 # Mod metadata
-    ├── pack.mcmeta                        # Data pack config
-    └── data/simplymore/
-        └── capabilities/weapons/          # 133 weapon JSON files
-```
-
-## Dependencies
-
-| Mod | Version | Purpose |
-|-----|---------|---------|
-| Epic Fight | 20.14.0+ | Combat animation system |
-| Simply Swords | 1.55.0+ | Base weapon mod |
-| Simply More | 1.2.0+ | Additional weapon types |
-| Cloth Config | 11.1.106+ | Configuration |
-| Architectury API | Latest | Cross-platform compatibility |
-
-## Features
-
-- **133+ Weapon Mappings**: All Simply More weapons mapped to Epic Fight types
-- **Custom Skills**: Hyper Focus, Impact Frame, Color Shading
-- **Auto Data Pack**: Weapon capabilities generated at build time
-- **Balanced Attributes**: Tuned damage, impact, and armor negation
-- **Full Compatibility**: Works with Simply Swords, Simply More, and Epic Fight
-
-## Building for Development
-
-### Windows
-```cmd
-gradlew.bat build
-```
-
-### Linux/Mac
-```bash
-./gradlew build
-```
-
-### Troubleshooting
-
-**Gradle version mismatch:**
-- Ensure you're using Gradle 8.5 or newer
-- The `gradle-wrapper.properties` is configured for Gradle 8.5
-
-**ForgeGradle compatibility:**
-- This project uses ForgeGradle 6.0+
-- Minecraft 1.20.1 with Forge 47.2.0
-
-**Compilation errors:**
-- Ensure all dependencies are accessible
-- Check that Java 17+ is installed
-
-## License
-
-This project is inspired by Epic Fight | Simply Swords EpicFied 2 by RobertOn.
-All original code and assets are created independently.
-
-See [LICENSE](LICENSE) and [NOTICE](NOTICE) for details.
-
-## Credits
-
-- **Epic Fight** by maninthe_home / Antikythera Studios
-- **Simply Swords** by Sweenus / Timefall Development
-- **Simply More** by RosemaryThyme & NotSaneAshley
+本项目采用 **CC-BY-SA-4.0**（与所改编的 EpicFied 2 内容保持相同方式共享），使用时请保留本节致谢。
