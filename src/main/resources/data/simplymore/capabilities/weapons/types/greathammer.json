@@ -1,0 +1,50 @@
+{
+  "collider": {
+    "number": 3,
+    "size": [
+      0.35,
+      0.5,
+      1.0
+    ],
+    "center": [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  },
+  "livingmotion_modifier": {
+    "two_hand": {
+      "fall": "epicfight:biped/living/hold_greatsword",
+      "idle": "efn:biped/ng_greatsword/ng_great_idle",
+      "run": "epicfight:biped/living/run_greatsword",
+      "block": "epicfight:biped/skill/guard_greatsword",
+      "sneak": "wom:biped/living/torment_berserk_idle",
+      "swim": "reimportrob:biped/asanginxst_hold_greatsword",
+      "kneel": "epicfight:biped/living/hold_greatsword",
+      "walk": "efn:biped/ng_greatsword/ng_great_walk",
+      "sit": "epicfight:biped/living/hold_greatsword"
+    }
+  },
+  "hit_particle": "epicfight:hit_blunt",
+  "hit_sound": "epicfight:entity.hit.blunt_hard",
+  "swing_sound": "epicfight:entity.weapon.whoosh_hard",
+  "styles": {
+    "default": "two_hand",
+    "cases": []
+  },
+  "combos": {
+    "two_hand": [
+      "efn:biped/ng_greatsword/ng_great_auto1",
+      "reimportrob:biped/asanginxst_greatsword_twohand_auto_2",
+      "wom:biped/combat/solar_auto_4",
+      "reimportrob:biped/asanginxst_greatsword_dash",
+      "wom:biped/combat/solar_auto_2",
+      "wom:biped/combat/solar_horno"
+    ]
+  },
+  "category": "greatsword",
+  "innate_skills": {
+    "two_hand": "s_epicfied:rushing_slam"
+  },
+  "usable_in_offhand": false
+}

@@ -1,5 +1,5 @@
 {
-  "type": "epicfight:spear",
+  "type": "simplymore:halberd",
   "attributes": {
     "common": {
       "armor_negation": 12.0,

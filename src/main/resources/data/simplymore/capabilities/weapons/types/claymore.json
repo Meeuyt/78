@@ -1,0 +1,50 @@
+{
+  "collider": {
+    "number": 3,
+    "size": [
+      0.3,
+      0.5,
+      1.0
+    ],
+    "center": [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  },
+  "hit_particle": "epicfight:hit_blade",
+  "hit_sound": "epicfight:entity.hit.blade",
+  "livingmotion_modifier": {
+    "two_hand": {
+      "fall": "epicfight:biped/living/hold_greatsword",
+      "idle": "efn:biped/nf_tachi/nf_tachi_idle",
+      "run": "efn:biped/nf_tachi/nf_tachi_run",
+      "block": "epicfight:biped/skill/guard_greatsword",
+      "sneak": "epicfight:biped/living/hold_greatsword",
+      "walk": "efn:biped/nf_tachi/nf_tachi_walk",
+      "swim": "epicfight:biped/living/hold_greatsword",
+      "kneel": "epicfight:biped/living/hold_greatsword",
+      "sit": "wom:biped/living/torment_berserk_idle"
+    }
+  },
+  "swing_sound": "epicfight:entity.weapon.whoosh_hard",
+  "combos": {
+    "two_hand": [
+      "reimportrob:biped/asanginxst_greatsword_auto1",
+      "cdmoveset:biped/new/dual_tachi/great_tachi_auto2",
+      "cdmoveset:biped/new/dual_tachi/great_tachi_auto3",
+      "cdmoveset:biped/new/dual_tachi/great_tachi_auto4",
+      "reimportrob:biped/asanginxst_tachi_dash",
+      "efn:biped/nf_tachi/nf_tachi_airslash"
+    ]
+  },
+  "styles": {
+    "default": "two_hand",
+    "cases": []
+  },
+  "category": "greatsword",
+  "innate_skills": {
+    "two_hand": "s_epicfied:charged_swordslash"
+  },
+  "usable_in_offhand": false
+}

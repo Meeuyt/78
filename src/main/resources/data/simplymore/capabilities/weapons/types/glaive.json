@@ -1,0 +1,48 @@
+{
+  "collider": {
+    "number": 3,
+    "size": [
+      0.4,
+      0.4,
+      0.8
+    ],
+    "center": [
+      0.0,
+      0.0,
+      -0.75
+    ]
+  },
+  "hit_particle": "epicfight:hit_blade",
+  "hit_sound": "epicfight:entity.hit.blade",
+  "livingmotion_modifier": {
+    "two_hand": {
+      "idle": "reimportrob:biped/namelesslk_falchion_idle",
+      "block": "reimportrob:biped/roberton_pole_guard",
+      "run": "epicfight:biped/living/run_spear",
+      "sneak": "reimportrob:biped/asanginxst_hold_spear",
+      "swim": "epicfight:biped/living/hold_spear",
+      "kneel": "reimportrob:biped/asanginxst_hold_spear",
+      "walk": "reimportrob:biped/asanginxst_hold_spear"
+    }
+  },
+  "swing_sound": "epicfight:entity.weapon.whoosh",
+  "styles": {
+    "default": "two_hand",
+    "cases": []
+  },
+  "combos": {
+    "two_hand": [
+      "cdmoveset:biped/new/spear/spear_twohand_auto1",
+      "reimportrob:biped/namelesslk_falchion_auto2",
+      "reimportrob:biped/namelesslk_falchion_auto3",
+      "cdmoveset:biped/new/spear/spear_twohand_auto2",
+      "cdmoveset:biped/new/spear/spear_dash",
+      "reimportrob:biped/asanginxst_spear_twohand_airslash"
+    ]
+  },
+  "category": "spear",
+  "innate_skills": {
+    "two_hand": "cdmoveset:spearslash"
+  },
+  "usable_in_offhand": false
+}

@@ -1,0 +1,48 @@
+{
+  "collider": {
+    "number": 3,
+    "size": [
+      0.4,
+      0.4,
+      0.7
+    ],
+    "center": [
+      0.0,
+      0.0,
+      -0.35
+    ]
+  },
+  "livingmotion_modifier": {
+    "common": {
+      "idle": "reimportrob:biped/reascer_old_sowrd_onehand_idle",
+      "block": "epicfight:biped/skill/guard_sword",
+      "run": "reimportrob:biped/asanginxst_run_holding_weapon",
+      "sneak": "reimportrob:biped/asanginxst_sneak",
+      "kneel": "reimportrob:biped/asanginxst_kneel",
+      "walk": "reimportrob:biped/reascer_old_sowrd_onehand_walk_forward",
+      "swim": "epicfight:biped/living/hold_longsword"
+    }
+  },
+  "hit_particle": "epicfight:hit_blade",
+  "hit_sound": "epicfight:entity.hit.blade",
+  "swing_sound": "epicfight:entity.weapon.whoosh_small",
+  "styles": {
+    "default": "two_hand",
+    "cases": []
+  },
+  "combos": {
+    "two_hand": [
+      "reimportrob:biped/asanginxst_sword_dual_auto1",
+      "efn:biped/nf_sword/nf_sword_auto2",
+      "efn:biped/nf_shortsword/nf_shortsword_auto6",
+      "wom:biped/combat/agony_auto_2",
+      "efn:biped/nf_shortsword/nf_shortsword_dash",
+      "reimportrob:biped/asanginxst_katana_airslash"
+    ]
+  },
+  "category": "sword",
+  "innate_skills": {
+    "two_hand": "s_epicfied:chakram_slash"
+  },
+  "usable_in_offhand": false
+}
