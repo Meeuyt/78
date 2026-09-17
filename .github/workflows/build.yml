@@ -32,46 +32,8 @@ jobs:
       - name: Install Epic Fight to local Maven
         run: |
           mkdir -p /home/runner/.gradle/caches/forge_gradle/bundled_deobf_repo/curse/maven/epicfight-mod-405076/7345468_mapped_official_1.20.1/
-          
-          echo "Attempting to download Epic Fight..."
-          
-          # Method 1: Direct CurseForge download with browser headers
-          curl -fL --max-time 60 --retry 3 --retry-delay 5 \
-            -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-            -H "Accept: application/java-archive,application/octet-stream" \
-            -H "Referer: https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod" \
-            "https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod/files/7345468/download" \
-            -o /tmp/epicfight.jar 2>/dev/null || true
-          
-          # Method 2: Try with wget if curl failed
-          if [ ! -s /tmp/epicfight.jar ]; then
-            echo "Method 1 failed, trying wget..."
-            wget --timeout=60 --tries=3 --no-check-certificate \
-              --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-              --referer="https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod" \
-              "https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod/files/7345468/download" \
-              -O /tmp/epicfight.jar 2>/dev/null || true
-          fi
-          
-          # Method 3: Try alternative file ID
-          if [ ! -s /tmp/epicfight.jar ]; then
-            echo "Method 2 failed, trying alternative file ID..."
-            curl -fL --max-time 60 --retry 3 \
-              -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
-              -H "Accept: application/java-archive" \
-              "https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod/files/8049910/download" \
-              -o /tmp/epicfight.jar 2>/dev/null || true
-          fi
-          
-          # Verify and install
-          if [ -f /tmp/epicfight.jar ] && unzip -q /tmp/epicfight.jar -d /tmp/epicfight_check >/dev/null 2>&1; then
-            echo "Epic Fight JAR downloaded successfully ($(wc -c < /tmp/epicfight.jar) bytes)"
-            cp /tmp/epicfight.jar /home/runner/.gradle/caches/forge_gradle/bundled_deobf_repo/curse/maven/epicfight-mod-405076/7345468_mapped_official_1.20.1/epicfight-mod-405076-7345468_mapped_official_1.20.1.jar
-          else
-            echo "ERROR: Failed to download Epic Fight JAR"
-            exit 1
-          fi
-          
+          curl -L -o /tmp/epicfight.jar "https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod/files/8049910/download"
+          cp /tmp/epicfight.jar /home/runner/.gradle/caches/forge_gradle/bundled_deobf_repo/curse/maven/epicfight-mod-405076/7345468_mapped_official_1.20.1/epicfight-mod-405076-7345468_mapped_official_1.20.1.jar
           cat > /home/runner/.gradle/caches/forge_gradle/bundled_deobf_repo/curse/maven/epicfight-mod-405076/7345468_mapped_official_1.20.1/epicfight-mod-405076-7345468_mapped_official_1.20.1.pom << 'EOF'
           <dependency>
             <groupId>curse.maven</groupId>
