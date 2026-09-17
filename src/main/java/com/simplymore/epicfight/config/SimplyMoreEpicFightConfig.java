@@ -9,7 +9,6 @@ public class SimplyMoreEpicFightConfig {
 
     static {
         BUILDER.push("Simply More Epic Fight Config");
-
         BUILDER.pop();
         COMMON_SPEC = BUILDER.build();
     }

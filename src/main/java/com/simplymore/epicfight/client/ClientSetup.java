@@ -2,7 +2,6 @@ package com.simplymore.epicfight.client;
 
 import com.simplymore.epicfight.SimplyMoreEpicFight;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
@@ -13,7 +12,7 @@ public class ClientSetup {
     private static final Logger LOGGER = LogManager.getLogger(SimplyMoreEpicFight.MOD_ID);
 
     @SubscribeEvent
-    public static void onRegisterGuiOverlays(RegisterGuiOverlaysEvent event) {
+    public static void onRegisterGuiOverlays(net.minecraftforge.client.event.RegisterGuiOverlaysEvent event) {
         LOGGER.info("Registering GUI overlays...");
     }
 }

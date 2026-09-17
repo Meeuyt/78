@@ -57,39 +57,6 @@ sourceSets.main.resources.srcDir 'src/generated/resources'
 
 repositories {
     mavenCentral()
-    maven {
-        url "https://cursemaven.com"
-        content {
-            includeGroup "curse.maven"
-        }
-    }
-    maven {
-        url "https://maven.theillusivec4.top/"
-    }
-    maven {
-        url "https://maven.epicfight.dev/"
-        content {
-            includeGroup "dev.epicfight"
-        }
-    }
-    maven {
-        url "https://maven.simplyswords.dev/"
-        content {
-            includeGroup "com.simplyswords"
-        }
-    }
-    maven {
-        url "https://maven.architectury.dev/"
-        content {
-            includeGroup "dev.architectury"
-        }
-    }
-    maven {
-        url "https://maven.shedaniel.me/"
-        content {
-            includeGroup "me.shedaniel"
-        }
-    }
 }
 
 configurations.all {
@@ -98,8 +65,6 @@ configurations.all {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
-
-    compileOnly fg.deobf("dev.epicfight:epicfight:20.14.17")
 }
 
 jar {
